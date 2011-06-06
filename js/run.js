@@ -33,7 +33,7 @@
       showPrompt: function () {
         var pin_name = prompt("Name your pin");
 		var pin_descrip = prompt("Describe your pin");
-        var pin_source = prompt("Pin an image.");
+        var pin_source = prompt("Pin an image: (Please paste image url)");
         var pin_model = new Pin({ name: pin_name, discription: pin_descrip, source: pin_source });
         //Add a new pin model to our pin collection
         this.pins.add( pin_model );
