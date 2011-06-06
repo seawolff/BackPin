@@ -1,0 +1,9 @@
+[submodule "lib"]
+	path = lib
+	url = git@github.com:documentcloud/backbone.git
+[submodule "lib/backbone"]
+	path = lib/backbone
+	url = git@github.com:documentcloud/backbone.git
+[submodule "lib/underscore"]
+	path = lib/underscore
+	url = https://github.com/documentcloud/underscore.git

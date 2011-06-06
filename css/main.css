@@ -1,0 +1,82 @@
+body 
+{
+    font-family:arial;  
+}
+
+#pins-list
+{
+    position:relative;
+}
+
+
+.item 
+{
+    position:relative;
+    width:125px;
+    height:125px;   
+    border:4px solid #222;  
+    margin:5px 5px 5px 0;
+     
+    /* required to hide the image after resized */
+    overflow:hidden;
+     
+    /* for child absolute position */
+    position:relative;
+     
+    /* display div in line */
+    float:left;
+}
+
+.item .caption 
+{
+    width:125px;
+    height:125px;
+    background:#000;
+    color:#fff;
+    font-weight:bold;
+         
+    /* fix it at the bottom */
+    position:absolute;
+    left:0;
+ 
+    /* hide it by default */
+    display:none;
+ 
+    /* opacity setting */
+    filter:alpha(opacity=80);    /* ie  */
+    -moz-opacity:0.8;    /* old mozilla browser like netscape  */
+    -khtml-opacity: 0.8;    /* for really really old safari */ 
+    opacity: 0.8;    /* css standard, currently it works in most modern browsers like firefox,  */
+ 
+}
+ 
+.item .caption a 
+{
+    text-decoration:none;
+    color:#0cc7dd;
+    font-size:16px; 
+     
+    /* add spacing and make the whole row clickable*/
+    padding:5px;
+    display:block;
+}
+ 
+.item .caption p 
+{
+    padding:5px;    
+    margin:0;
+    font-size:10px;
+}
+ 
+img 
+{
+    border:0;
+     
+    /* allow javascript moves the img position*/
+    position:absolute;
+}
+ 
+.clear 
+{
+    clear:both; 
+}
