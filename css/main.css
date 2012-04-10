@@ -36,7 +36,6 @@ body
     font-weight:bold;
          
     /* fix it at the bottom */
-    position:absolute;
     left:0;
  
     /* hide it by default */

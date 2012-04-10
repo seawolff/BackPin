@@ -1,12 +1,12 @@
 (function ($) 
 {
           
-      Pin = Backbone.Model.extend({
-          //Create a model to hold pin atribute
-          name: null,
-		  discription: null,
-          source: null
-      });
+    Pin = Backbone.Model.extend({
+        //Create a model to hold pin atribute
+        name: null,
+	      discription: null,
+        source: null
+    });
  
     Pins = Backbone.Collection.extend({
       //This is our Pins collection and holds our Pin models
@@ -31,10 +31,12 @@
       },
         
       showPrompt: function () {
-        var pin_name = prompt("Name your pin");
-		var pin_descrip = prompt("Describe your pin");
-        var pin_source = prompt("Pin an image: (Please paste image url)");
-        var pin_model = new Pin({ name: pin_name, discription: pin_descrip, source: pin_source });
+        var 
+          pin_source = prompt("Pin an image: (Please paste image url)"),
+          pin_name = prompt("Name your pin"),
+		      pin_descrip = prompt("Describe your pin"),
+          pin_model = new Pin({ name: pin_name, discription: pin_descrip, source: pin_source });
+
         //Add a new pin model to our pin collection
         this.pins.add( pin_model );
       },
@@ -49,7 +51,7 @@
          
             //On mouse over those thumbnail
             $('.item').hover(
-			function() {
+			       function() {
                  
                 //Set the width and height according to the zoom percentage
                 width = $('.item').width() * zoom;
@@ -68,7 +70,7 @@
                 //Hide the caption
                 $(this).find('div.caption').stop(false,true).fadeOut(200);
             });
-      },
+        },
         
       addPinLi: function (model) 
         {
@@ -87,7 +89,7 @@
                     
                 img.onload =  function() {             
                     //The parameter passed is a reference to the model that was added
-                      $("#pins-list").append("<div class='item'><a href=''><img src='" + model.get('source') + "' alt='title' title='' width='125' height='125' /></a> <div class='caption'> <a href='" + model.get('source') + "'><h2> " + model.get('name') + "</h2> <p>" + model.get('discription') + "</p> </a></div> </div>");
+                      $("#pins-list").append("<li class='item'><a href=''><img src='" + model.get('source') + "' alt='title' title='' width='125' height='125' /></a> <div class='caption'> <a href='" + model.get('source') + "'><h2> " + model.get('name') + "</h2> <p>" + model.get('discription') + "</p> </a></div> </li>");
                     //Use .get to receive attributes of the model 
                 }
                 
